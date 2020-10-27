@@ -5,42 +5,38 @@ using namespace std;
 bool Token::operator==(char b) { return len == 1 && str[0] == b; }
 bool Token::operator!=(char b) { return len != 1 || str[0] != b; }
 Token::Token() {}
-Token::Token(char c) : len(1), type(c)
-{
-
+Token::Token(char c) : len(1), type(c){
     str = new char[1];
     str[0] = c;
 } // default type = c itself
-Token::Token(char c, char c2, int ty) : len(2), type(ty)
-{
+Token::Token(char c, char c2, int ty) : len(2), type(ty){
     str = new char[2];
     str[0] = c;
     str[1] = c2;
 }
-Token::Token(char *arr, int l, int ty = ID) : len(l), type(ty)
-{
-    str = new char[len + 1];
+Token::Token(char *arr, int l, int ty = ID) : len(l), type(ty){//기본 타입은 ID, ID나 NUM만 가능
+    str = new char[len + 1];    //마지막에 \0을 넣기 위해.
     for (int i = 0; i < len; i++)
-        str[i] = arr[i];
-    str[len] = '\0';
-    if (type == NUM)
+        str[i] = arr[i];        //str에 복사
+    str[len] = '\0';            //문자열 끝.
+    if (type == NUM)            //피연산자가 수일경우
     {
         ival = arr[0] - '0';
         for (int i = 1; i < len; i++)
             ival = ival * 10 + arr[i] - '0';
     }
-    else if (type == ID)
+    else if (type == ID)        //피연산자가 A나 an77 같은 것이 경우
         ival = 0;
     else
         throw "must be ID or NUM";
 }
-bool Token::IsOperand()
+bool Token::IsOperand()     //피연산자인가 아닌가?
 {
     return type == ID || type == NUM;
 }
-ostream &operator<<(ostream &os, Token t)
+ostream &operator<<(ostream &os, Token t)       //오버로딩
 {
-    if (t.type == UMINUS)
+    if (t.type == UMINUS)       //unary minus
         os << "-u";
     else if (t.type == NUM)
         os << t.ival;
@@ -50,15 +46,14 @@ ostream &operator<<(ostream &os, Token t)
     os << " ";
     return os;
 }
-bool GetID(Expression &e, Token &tok)
-{
+bool GetID(Expression &e, Token &tok){      //ID토큰 생성. 후에 나올 NextToken함수에서 판별용으로 사용
     char arr[MAXLEN];
     int idlen = 0;
     char c = e.str[e.pos];
-    if (!(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z'))
+    if (!(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z'))    //알파벳이 아니면...
         return false;
-    arr[idlen++] = c;
-    e.pos++;
+    arr[idlen++] = c;   //arr[0]에 c를 대입하고 idlen=1;
+    e.pos++;        //pos+1
     while ((c = e.str[e.pos]) >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9')
     {
         arr[idlen++] = c;
@@ -68,27 +63,51 @@ bool GetID(Expression &e, Token &tok)
     tok = Token(arr, idlen, ID); // return an ID
     return true;
 }
-bool GetInt(Expression &e, Token &tok)
-{
-    // 이부분을 작성하세요
+
+bool GetInt(Expression &e, Token &tok){         //GetID와 비슷한 기능.
+    char arr[MAXLEN];
+    int idlen = 0;
+    char c = e.str[e.pos];
+    if (!(c >= '0' && c <= '9'))    //숫자가 아니면... 풀어쓸수도 있겠지만..
+        return false;
+    arr[idlen++] = c;   //arr[0]에 c를 대입하고 idlen=1;
+    e.pos++;        //pos+1
+    while ((c = e.str[e.pos]) >= '0' && c <= '9')
+    {
+        arr[idlen++] = c;
+        e.pos++;
+    }
+    arr[idlen] = '\0';
+    tok = Token(arr, idlen, NUM); // return an NUM
+    return true;
 }
-void SkipBlanks(Expression &e)
-{
+
+void SkipBlanks(Expression &e){
     char c;
     while (e.pos < e.len && ((c = e.str[e.pos]) == ' ' || c == '\t'))
         e.pos++;
 }
-bool TwoCharOp(Expression &e, Token &tok)
-{
+bool TwoCharOp(Expression &e, Token &tok){
     // 7가지 두글자 토큰들 <= >= == != && || -u을 처리
-
     char c = e.str[e.pos];
     char c2 = e.str[e.pos + 1];
     int op; // LE GE EQ NE AND OR UMINUS
     if (c == '<' && c2 == '=')
         op = LE;
-    else if                // .각 두글자 토큰에 대해 알맞은 type값을 op에 저장
-        else return false; // 맞는 두글자 토큰이 아니면 false를 return
+    //EQ,NE,GE,LE(done),AND,OR,UMINUS;위에있었네..
+    else if(c == '>' && c2 == '=')                // .각 두글자 토큰에 대해 알맞은 type값을 op에 저장
+        op  = GE;
+    else if(c == '=' && c2 == '=')
+        op = EQ;
+    else if(c == '!' && c2 == '=')
+        op = NE;
+    else if(c == '&' && c2 == '&')
+        op = AND;
+    else if(c == '|' && c2 == '|')
+        op = OR;
+    else if(c == '-' && c2 == 'u')
+        op = UMINUS;
+    else return false; // 맞는 두글자 토큰이 아니면 false를 return
     tok = Token(c, c2, op);
     e.pos += 2;
     return true;
@@ -105,7 +124,7 @@ bool OneCharOp(Expression &e, Token &tok)
     }
     return false;
 }
-Token NextToken(Expression &e)
+Token NextToken(Expression &e)  //여기서 토큰을 생성
 {
     static bool oprrFound = true; // 종전에 연산자 발견되었다고 가정.
     Token tok;
@@ -126,22 +145,75 @@ Token NextToken(Expression &e)
     }
     throw "Illegal Character Found";
 }
-int icp(Token &t)
-{ // in-coming priority
+int icp(Token &t){ // in-coming priority
     int ty = t.type;
-    /* ty가 '('면 0, UMINUS나 '!'면 1,
-'*'나 '/'나 '%'면 2,
-‘+’나 '-'면 3,
-'<'나 '>'나 LE나 GE면 4, EQ나 NE면 5,
-AND면 6,
-OR이면 7,
-'='이면 8,
-'#'면 9 를 return한다.*/
+    switch(ty){
+        case '(':   //'('면 0
+            return 0;
+            break;
+        case UMINUS:    //UMINUS나 '!'면 1
+        case '!':
+            return 1;break;
+        case '*':       //'*'나 '/'나 '%'면 2
+        case '/':
+        case '%':
+            return 2;break;
+        case '+':   //‘+’나 '-'면 3
+        case '-':
+            return 3;break;
+        case '>':   //'<'나 '>'나 LE나 GE면 4
+        case '<':
+        case LE:
+        case GE:
+            return 4;break;
+        case EQ:    //EQ나 NE면 5
+        case NE:
+            return 5;break;
+        case AND:   //AND면 6
+            return 6;break;
+        case OR:    //OR이면 7
+            return 7;break;
+        case '=':   //'='이면 8
+            return 8;break;
+        case '#':   //'#'면 9
+            return 9;break;
+    }
 }
 int isp(Token &t) // in-stack priority
 {
     int ty = t.type;
-    //stack 에서의 우선순위 결정
+    //stack 에서의 우선순위 결정; 괄호를 제하고는 비슷한듯하다.
+    switch(ty){ 
+        case UMINUS:    //UMINUS나 '!'면 0
+        case '!':
+            return 0;break;
+        case '*':       //'*'나 '/'나 '%'면 1
+        case '/':
+        case '%':
+            return 1;break;
+        case '+':   //‘+’나 '-'면 2
+        case '-':
+            return 2;break;
+        case '>':   //'<'나 '>'나 LE나 GE면 3
+        case '<':
+        case LE:
+        case GE:
+            return 3;break;
+        case EQ:    //EQ나 NE면 4
+        case NE:
+            return 4;break;
+        case AND:   //AND면 5
+            return 5;break;
+        case OR:    //OR이면 6
+            return 6;break;
+        case '=':   //'='이면 7
+            return 7;break;
+        case '(':   //'('면 8
+            return 8;
+            break;
+        case '#':   //'#'면 9
+            return 9;break;
+    }
 }
 void Postfix(Expression e)
 {
