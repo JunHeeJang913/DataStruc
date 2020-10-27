@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{txfonts}
+\usepackage{kotex}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subfigure}
+\usepackage{boxedminipage}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\begin{document}
+\title{과제}
+\author{B935394 컴퓨터공학과 장준희}
+\date{2020 09 03}
+\maketitle
+\newpage
+\section{자기소개}
+이름:장준희\\학번:B935394\\학과:컴퓨터공학과\\
+\section{수식 작성}
+\subsection{학번별 수식 확인 후 옮겨적기}
+\begin{boxedminipage}[l]{0.7\linewidth}
+\# 19 \underline{\bf미분계수}
+\begin{itemize}
+\item[$\Diamondblack$]함수 $f(x)$의 $x=a$에서의 미분계수
+\begin{itemize}
+\item 함수 $y=f(x)$에서 $x$의 값이 $a$에서 $a+h$까지 변할 때,\\ $x$의 증분 $\Delta x\to 0$일 때 평균변화율의 극한값이 존재하면 이 극한값을 함수 $y=f(x)$의 $x=a$에서의 순간변화율 또는 미분계수라고 한다.
+\item\begin{align*}f'(a)&=\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}\\&=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}\\&=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\end{align*}
+\end{itemize}
+\item[$\Diamondblack$]미분계수의 기하학적의미
+\begin{itemize}
+\item 함수 $f(x)$의 $x=a$에서의 미분계수 $f'(a)$는 곡선 $y=f(x)$위의 점 $(a,f(a))$에서의 접선의 기울기를 나타낸다.
+\end{itemize}
+\item[$\Diamondblack$]미분가능성과 연속성
+\begin{itemize}
+\item 함수 $f(x)$의 $x=a$에서 미분가능하면 $f(x)$는 $x=a$에서 연속이다.\\
+\end{itemize}
+\end{itemize}
+\end{boxedminipage}
+\newline\\\\
+글상자에서 미분계수의 정의와 이를 그래프로 옮겼을 때 볼 수 있는 기하학적 의미를 설명하고 있다.\\
+\newpage
+\section{가장 좋아하는 그림 첨부하기}
+\subsection{자신을 나타낼 수 있는 사진}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{pizza}
+\caption{피자}
+\label{fig:fig1}
+\end{center}
+\end{figure}
+그림 \ref{fig:fig1}은 피자이고 맛있다!!
+
+\subsection{좋아하는 연예인 사진 3장}
+\begin{figure}[h]
+\subfigure[유재석/무한도전]{\includegraphics[width=0.3\textwidth]{yu1}}
+\subfigure[유재석/런닝맨]{\includegraphics[width=0.3\textwidth]{yu2}}
+\subfigure[유재석/미추리]{\includegraphics[width=0.3\textwidth]{yu3}}
+\caption{유재석}
+\label{fig:fig2}
+\end{figure}
+그림 \ref{fig:fig2}는 유재석의 다양한 프로 사진이다. 자기관리와 성실함을 배우고 싶다.
+\newpage
+\section{구구단}
+\subsection{구구단 표출력}
+\begin{center}
+\begin{tabular}[h]{|c|c|c|c|}
+\hline
+2단&3단&4단&5단\\
+\hline
+$2\times1=2$&$3\times1=3$&$4\times1=4$&$5\times1=5$\\
+\hline
+$2\times2=4$&$3\times2=6$&$4\times2=8$&$5\times2=10$\\
+\hline
+$2\times3=6$&$3\times3=9$&$4\times3=12$&$5\times3=15$\\
+\hline
+$2\times4=8$&$3\times4=12$&$4\times4=16$&$5\times4=20$\\
+\hline
+\end{tabular}
+\end{center}
+
+구구단 표출력
+\subsection{구구단 슈도코드}
+\begin{algorithm}
+	\caption{ Times\_Table }
+	\begin{algorithmic}[1]
+		\State $a, b$ is integar
+		\For { $a=1,2, ... ,9$ }
+			\For { $b=1,2, ... , 9$}
+			\State Show $a \times b = a*b$
+			\State $b = b+1$
+			\EndFor
+		\State newline
+		\EndFor
+	\end{algorithmic}
+\end{algorithm}
+			
+	
+\end{document}
