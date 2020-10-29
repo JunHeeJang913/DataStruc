@@ -46,11 +46,11 @@ ostream &operator<<(ostream &os, Token t)       //오버로딩
     os << " ";
     return os;
 }
-bool GetID(Expression &e, Token &tok){      //ID토큰 생성. 후에 나올 NextToken함수에서 판별용으로 사용
+bool GetID(Expression &e, Token &tok){      //ID토큰 생성, 후에 나올 NextToken함수에서 판별용으로 사용
     char arr[MAXLEN];
     int idlen = 0;
     char c = e.str[e.pos];
-    if (!(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z'))    //알파벳이 아니면...
+    if (!(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z'))    //알파벳이 아니면
         return false;
 
     arr[idlen++] = c;   //arr[0]에 c를 대입하고 idlen=1;
@@ -70,7 +70,7 @@ bool GetInt(Expression &e, Token &tok){         //GetID와 비슷한 기능.
     char arr[MAXLEN];
     int idlen = 0;
     char c = e.str[e.pos];
-    if (!(c >= '0' && c <= '9'))    //숫자가 아니면... 풀어쓸수도 있겠지만..
+    if (!(c >= '0' && c <= '9'))    //숫자가 아니면
         return false;
     arr[idlen++] = c;   //arr[0]에 c를 대입하고 idlen=1;
     e.pos++;        //pos+1
@@ -96,7 +96,6 @@ bool TwoCharOp(Expression &e, Token &tok){
     int op; // LE GE EQ NE AND OR UMINUS
     if (c == '<' && c2 == '=')
         op = LE;
-    //EQ,NE,GE,LE(done),AND,OR,UMINUS;위에있었네..
     else if(c == '>' && c2 == '=')                // .각 두글자 토큰에 대해 알맞은 type값을 op에 저장
         op  = GE;
     else if(c == '=' && c2 == '=')
@@ -107,7 +106,7 @@ bool TwoCharOp(Expression &e, Token &tok){
         op = AND;
     else if(c == '|' && c2 == '|')
         op = OR;
-    else if(c == '-' && c2 == 'u')      //사실상 의미없는 부분
+    else if(c == '-' && c2 == 'u')      
         op = UMINUS;
     else return false; // 맞는 두글자 토큰이 아니면 false를 return
     tok = Token(c, c2, op);
@@ -128,7 +127,7 @@ bool OneCharOp(Expression &e, Token &tok)
 }
 Token NextToken(Expression &e)  //여기서 토큰을 생성
 {
-    static bool oprrFound = true; // 종전에 연산자 발견되었다고 가정.   //어디에 쓰는가..?
+    static bool oprrFound = true; // 종전에 연산자 발견되었다고 가정.   
     Token tok;
     SkipBlanks(e);      // skip blanks if any
     if (e.pos == e.len) // No more token left in this expression
@@ -143,7 +142,7 @@ Token NextToken(Expression &e)  //여기서 토큰을 생성
     }
     if (TwoCharOp(e, tok) || OneCharOp(e, tok))
     {
-        if (tok.type == '-' && (oprrFound==true)) //operator후 -발견->oprrfound를 사용하면...  //손봐야한다.
+        if (tok.type == '-' && (oprrFound==true)) //operator후 -발견->oprrfound를 사용하면...  
             tok = Token('-', 'u', UMINUS);              // unary minus(-u)로바꾸시오    //e.str[e.pos-2]는 왜..?
         oprrFound=true;
         return tok;
@@ -231,7 +230,8 @@ int isp(Token &t) // in-stack priority
     else if(ty=='#')//'#'면 10
         return 9;
 }     
-/*  if,else if 문과는 다르게 switch-case문을 쓰면 
+/*  
+    if,else if 문과는 다르게 switch-case문을 쓰면 
     default인 경우를 만들어 return값을 주어야 gcc에서
     경고를 안한다.
     control reaches end of non-void function [-Wreturn-type]
