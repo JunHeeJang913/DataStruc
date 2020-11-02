@@ -2,6 +2,7 @@
 #define TREE_H
 #include <iostream>
 #include <queue>
+#include <stack>
 using namespace std;
 template <class T>
 struct Node
@@ -49,22 +50,53 @@ void Tree<T>::Insert(Node<T> *&ptr, T &value)
 
 template <class T>
 void Tree<T>::Preorder(Node<T> *ptr){
-
+    if(ptr){
+        Visit(ptr);
+        Preorder(ptr->leftChild);
+        Preorder(ptr->rightChild);
+    }
 }
 
 template <class T>
 void Tree<T>::Inorder(Node<T> *ptr){
-
+    stack<Node<T>*> s;
+    Node<T> * currentNode = root;
+    while(1){
+        while(currentNode){
+            s.push(currentNode);
+            currentNode = currentNode->leftChild;
+        }
+        if(s.empty())   return;
+        currentNode = s.top(); s.pop();
+        Visit(currentNode);
+        currentNode = currentNode->rightChild;
+    }
 }
 
 template <class T>
 void Tree<T>::Postorder(Node<T> *ptr){
-
+    if(ptr){
+        Postorder(ptr->leftChild);
+        Postorder(ptr->rightChild);
+        Visit(ptr);
+    }
 }
 
 template <class T>
 void Tree<T>::Levelorder(){
-
+    queue<Node<T>*> q;
+    Node<T> * currentNode=root;
+    while(currentNode){
+        Visit(currentNode);
+        if(currentNode->leftChild){
+            q.push(currentNode->leftChild);
+        }
+        if(currentNode->rightChild){
+            q.push(currentNode->rightChild);
+        }
+        if(q.empty())   return;
+        currentNode=q.front(); q.pop(); 
+    }
 }
 //Preorder, Inorder, Postorder 함수를 구현하시오......
 //Levelorder(교재 p266 참조하되 STL 큐를 이용) 를 구현하시오.
