@@ -41,26 +41,24 @@ void Tree<T>::Insert(Node<T> *&ptr, T &value)
 { //Insert 의 helper 함수
     static Node<T> * temp=0;
     static bool check = 0;
-    if(ptr==0){//조건 고치기
-        if(ptr==0&&temp==0){
-            ptr = new Node<T>(value);
-            temp=ptr;
-        }
-        else if ((check==0&&temp->leftThreaded==true)||(check==1&&temp->rightThreaded==true)){   
-            ptr = new Node<T>(value);
-            if(temp!=0){
-                if(check==0){
-                    if(temp->leftChild!=ptr)
-                        ptr->leftChild=temp->leftChild;
-                    ptr->rightChild=temp;
-                    temp->leftThreaded=false;
-                }
-                else if(check==1){
-                    if(temp->rightChild!=ptr)
-                        ptr->rightChild=temp->rightChild;
-                    ptr->leftChild=temp;                
-                    temp->rightThreaded=false;
-                }
+    if(ptr==0&&temp==0){
+        ptr = new Node<T>(value);
+        temp=ptr;
+    }
+    if ((check==0&&temp->leftThreaded==true)||(check==1&&temp->rightThreaded==true)){   
+        ptr = new Node<T>(value);
+        if(temp!=0){
+            if(check==0){
+                if(temp->leftChild!=ptr)
+                    ptr->leftChild=temp->leftChild;
+                ptr->rightChild=temp;
+                temp->leftThreaded=false;
+            }
+            else if(check==1){
+                if(temp->rightChild!=ptr)
+                    ptr->rightChild=temp->rightChild;
+                ptr->leftChild=temp;                
+                temp->rightThreaded=false;
             }
         }
     }
