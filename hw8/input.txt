@@ -4,6 +4,9 @@ insert hihi 12
 insert hoho 45
 insert ha 12
 insert haha 99
+insert hzhz 10
+print
+delete huhu
 print
 find haha
 find huhu

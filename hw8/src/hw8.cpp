@@ -2,7 +2,7 @@
 using namespace std;
 int main(void)
 {
-    BST<string, double> tree, tree1;
+    BST<string, double> tree;
     string command, str;
     double dval;
     while (cin >> command)
