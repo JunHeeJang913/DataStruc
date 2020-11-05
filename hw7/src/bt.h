@@ -134,7 +134,7 @@ void Tree<T>::Preorder(Node<T> *ptr){
 }//재귀적인 방법
 
 template <class T>
-void Tree<T>::Inorder(Node<T> *ptr){
+void Tree<T>::Inorder(Node<T> *ptr){    //비재귀적 방법을 쓴다면 ptr==root
     //비재귀적 원본
     /*stack<Node<T>*> s;
     Node<T> * currentNode = root;
@@ -148,7 +148,21 @@ void Tree<T>::Inorder(Node<T> *ptr){
         Visit(currentNode);
         currentNode = currentNode->rightChild;
     }*/
-    Node<T> *temp
+    Node<T> *currentNode=root;
+    static bool visitRoot=false;
+    while(currentNode->rightChild!=0){
+        Node<T> * temp;
+        if(visitRoot==false){
+            temp=currentNode;
+            visitRoot=true;
+        }
+        else
+            temp=currentNode->rightChild;       
+        if(!currentNode->rightThreaded)
+            while(!temp->leftThreaded)temp=temp->leftChild;
+        currentNode=temp;
+        Visit(currentNode);
+    }    
 }//비재귀적방법
 
 template <class T>
