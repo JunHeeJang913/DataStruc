@@ -11,7 +11,7 @@ int main()
     tree.Preorder();
     cout << endl
          << "Inorder traversal: ";
-    tree.Inorder();
+    //tree.Inorder();
     cout << endl
          << "Postorder traversal: ";
     tree.Postorder();

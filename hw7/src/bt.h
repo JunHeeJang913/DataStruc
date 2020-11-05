@@ -39,43 +39,88 @@ void Tree<T>::Visit(Node<T> *ptr) { cout << ptr->data << " "; }
 template <class T>
 void Tree<T>::Insert(Node<T> *&ptr, T &value)
 { //Insert 의 helper 함수
-    static Node<T> * temp=0;
+    static Node<T> *temp = 0;
     static bool check = 0;
-    if(ptr==0&&temp==0){
-        ptr = new Node<T>(value);
-        temp=ptr;
-    }
-    if ((check==0&&temp->leftThreaded==true)||(check==1&&temp->rightThreaded==true)){   
-        ptr = new Node<T>(value);
-        if(temp!=0){
-            if(check==0){
-                if(temp->leftChild!=ptr)
-                    ptr->leftChild=temp->leftChild;
-                ptr->rightChild=temp;
-                temp->leftThreaded=false;
-            }
-            else if(check==1){
-                if(temp->rightChild!=ptr)
-                    ptr->rightChild=temp->rightChild;
-                ptr->leftChild=temp;                
-                temp->rightThreaded=false;
-            }
+    static bool visitRoot=false;
+    Node<T> *tempChild=0;
+    //리프노트일때VS리프노트가 아닐때-->이 조건이 무엇인가??
+    if(ptr==root&&visitRoot==false){
+        visitRoot=true;
+        if(root==0){
+            ptr=new Node<T>(value);
+            temp=ptr;
         }
-    }
-    else if (value < ptr->data){
-        check = 0;
-        temp=ptr;
-        Insert(ptr->leftChild, value);
-    }
-    else if (value > ptr->data){
-        check = 1;
-        temp=ptr;
-        Insert(ptr->rightChild, value);
-    }
-    else
-        cout<< "Duplicate value " << value << " ignored\n"<< endl;
+        else{
+            if (value < ptr->data)
+            {
+                check = 0;
+                temp = ptr;
+                Insert(ptr->leftChild, value);
+            }
+            else if (value > ptr->data)
+            {
+                check = 1;
+                temp = ptr;
+                Insert(ptr->rightChild, value);
+            }
+            else
+                cout << "Duplicate value " << value << " ignored\n" << endl;
+        }
+    }//루트
+    else if(check==0){
+        if(temp->leftThreaded==true){
+            tempChild=temp->leftChild;
+            ptr=new Node<T>(value);
+            ptr->rightChild=temp;
+            ptr->leftChild=tempChild;
+            temp->leftThreaded=false;
+        }
+        else{
+            if (value < ptr->data)
+            {
+                check = 0;
+                temp = ptr;
+                Insert(ptr->leftChild, value);
+            }
+            else if (value > ptr->data)
+            {
+                check = 1;
+                temp = ptr;
+                Insert(ptr->rightChild, value);
+            }
+            else
+                cout << "Duplicate value " << value << " ignored\n" << endl;
 
+        }
+    }//좌측
+    else if(check==1){
+        if(temp->rightThreaded==true){
+            tempChild=temp->rightChild;
+            ptr=new Node<T> (value);
+            ptr->leftChild=temp;
+            ptr->rightChild=tempChild;
+            temp->rightThreaded=false;
+        }
+        else{
+            if (value < ptr->data)
+            {
+                check = 0;
+                temp = ptr;
+                Insert(ptr->leftChild, value);
+            }
+            else if (value > ptr->data)
+            {
+                check = 1;
+                temp = ptr;
+                Insert(ptr->rightChild, value);
+            }
+            else
+                cout << "Duplicate value " << value << " ignored\n" << endl;
+        }
+    }//우측
+    visitRoot=false;
 }
+
 
 template <class T>
 void Tree<T>::Preorder(Node<T> *ptr){
@@ -90,7 +135,8 @@ void Tree<T>::Preorder(Node<T> *ptr){
 
 template <class T>
 void Tree<T>::Inorder(Node<T> *ptr){
-    stack<Node<T>*> s;
+    //비재귀적 원본
+    /*stack<Node<T>*> s;
     Node<T> * currentNode = root;
     while(1){
         while(currentNode){
@@ -101,14 +147,17 @@ void Tree<T>::Inorder(Node<T> *ptr){
         currentNode = s.top(); s.pop();
         Visit(currentNode);
         currentNode = currentNode->rightChild;
-    }
+    }*/
+    Node<T> *temp
 }//비재귀적방법
 
 template <class T>
 void Tree<T>::Postorder(Node<T> *ptr){
     if(ptr){
-        Postorder(ptr->leftChild);
-        Postorder(ptr->rightChild);
+        if(ptr->leftThreaded==false)
+            Postorder(ptr->leftChild);
+        if(ptr->rightThreaded==false)
+            Postorder(ptr->rightChild);
         Visit(ptr);
     }
 }
@@ -119,10 +168,10 @@ void Tree<T>::Levelorder(){
     Node<T> * currentNode=root;
     while(currentNode){
         Visit(currentNode);
-        if(currentNode->leftChild){
+        if(currentNode->leftChild&&currentNode->leftThreaded==false){
             q.push(currentNode->leftChild);
         }
-        if(currentNode->rightChild){
+        if(currentNode->rightChild&&currentNode->rightThreaded==false){
             q.push(currentNode->rightChild);
         }
         if(q.empty())   return;
