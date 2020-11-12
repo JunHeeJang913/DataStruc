@@ -24,7 +24,7 @@ public:
 template <class T>
 void Maxheap<T>::ChangeSize1D(int size)
 { //heap의 크기를 size만큼 늘리는 함수.
-    if(size<0)throw"추가하고자하는 크기는 양수여야합니다";
+    if(size<=0)throw"추가하고자하는 크기는 양수여야합니다";
     T*temp = new T[size+capacity+1];      //늘리고자하는 size, 노드저장가능개수, [0]
     int number=size;
     copy(heap,heap+capacity+1,temp);
@@ -40,7 +40,7 @@ void Maxheap<T>::Push(const T &newdata)
     }
     int currentNode=++heapSize;
     while(currentNode!=1&&heap[currentNode/2]<newdata){ //bubble up
-        heap[currentNode]=heap[currentnode/2];  //move parent down
+        heap[currentNode]=heap[currentNode/2];  //move parent down
         currentNode /=2;
     }
     heap[currentNode]=newdata;
