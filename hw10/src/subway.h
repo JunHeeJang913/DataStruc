@@ -25,17 +25,17 @@ private:
     Vertex from, to;
     int weight;
 public:
+    Edge();
     Edge(Vertex& from, Vertex& to, int weight);
 };
 class Graph{
 private:
-    vector<Vertex> *graph;
+    vector<Vertex> * graph;
     Vertex * vertex;    //모든 정점의 집합
     Edge * edge;        //모든 간선의 집합
 public:
-    Graph(fstream& );
+    Graph(istream& );
     void findShortestWay(Vertex form, Vertex to);       //A부터 B로가는 최단거리
     string findFairPoint(Vertex terminal1, Vertex terminal2);     //A와 B 중간의 지점
-    void initialize();
 };
 #endif
