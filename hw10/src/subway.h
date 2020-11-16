@@ -1,5 +1,6 @@
 #ifndef SUBWAY_H
 #define SUBWAY_H
+#define INF 1000000000
 #include <iostream>
 #include <stack>
 #include <queue>
@@ -8,34 +9,50 @@
 #include <math.h>
 #include <algorithm>
 #include <map>
-ostream& operator <<(ostream& os, Vertex v);
-class Vertex{
+ostream &operator<<(ostream &os, Vertex v);
+
+class Vertex
+{
 private:
     int line;       //호선
     string station; //역이름
+    int weight;   //가중치
+    int index;
 public:
-    Vertex(){line=NULL;station="\0";};
+    Vertex()
+    {
+        line = NULL;
+        station = "\0";
+    };
     Vertex(int line, string station);
     int getLine() { return line; };
     string getStation() { return station; };
+    bool operator==(Vertex ver2)
+    {
+        if (this->line == ver2.line && this->station == ver2.station) //호선도, 역도 같으면
+            return true;
+        else
+            return false;
+    };
+    void setWeight(Vertex &v);
+    void setIndex(int index){ this->index = index; };
+    int getIndex(){ return this->index; };
+    int getWeight(){ return this->weight; };
 };
 
-class Edge{
+class Graph
+{
 private:
-    Vertex from, to;
-    int weight;
+    vector<int> dist; //거리 배열
+    vector<bool> check;
+    vector<Vertex> *HeadNodes;
+    vector<Vertex> vertex; //모든 정점의 집합
 public:
-    Edge();
-    Edge(Vertex& from, Vertex& to, int weight);
-};
-class Graph{
-private:
-    vector<Vertex> * graph;
-    Vertex * vertex;    //모든 정점의 집합
-    Edge * edge;        //모든 간선의 집합
-public:
-    Graph(istream& );
-    void findShortestWay(Vertex form, Vertex to);       //A부터 B로가는 최단거리
-    string findFairPoint(Vertex terminal1, Vertex terminal2);     //A와 B 중간의 지점
+    int choose(const int n);
+    Graph(int numLine, istream &f);
+    void findShortestWay(Vertex from, Vertex to);             //A부터 B로가는 최단거리
+    string findFairPoint(Vertex terminal1, Vertex terminal2); //A와 B 중간의 지점
+    int findIndex(Vertex station);         //graph에서 사용할 인덱스 찾아주는 함수
+    bool isVertexExist(Vertex station);    //역이 이미 입력된적이 있는지 찾아주는 함수
 };
 #endif

@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
         return 1;
     }
     fin >> numLine;
-    //데이터 받는 과정
-    //…
+    //데이터 입력받아 지하철노선도 만들기
+    Graph subwayMap(numLine, fin);
     fin.close();
     fstream fin2(argv[2]);
     if (!fin2)
