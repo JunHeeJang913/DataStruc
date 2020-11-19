@@ -3,6 +3,7 @@ using namespace std;
 //============================================================================
 ostream& operator <<(ostream& os, Vertex& v){
     os<<v.getStation()<<endl;
+    return os;
 }
 //============================================================================
 Vertex::Vertex(int line, string station){
@@ -111,12 +112,10 @@ int Graph::choose(const int n){
     return a;
 }
 //============================================================================
-void Graph::findShortestWay(Vertex from, Vertex to){       //다익스트라 알고리즘,연결리스트,우선순위 큐를 이용
-    int fromIndex, toIndex;
-    fromIndex=findIndex(from);
-    toIndex=findIndex(to);
+void Graph::findShortestWay(int fromIndex, int toIndex){       //다익스트라 알고리즘,연결리스트,우선순위 큐를 이용
     dist[fromIndex]=0;
-    priority_queue<pair<int,int>, vector<pair<int,int> >,greater<pair<int,int> > > pq; 
+    priority_queue<pair<int,int>, vector<pair<int,int> >,greater<pair<int,int> > > pq;
+    queue<Vertex> tempRoute;
     //우선순위 큐는 pair의 경우 first를 기준으로 정렬, <가중치, 인덱스> 쌍이다.
     //우선순위큐<자료형,구현체(대게 vector<자료형>),비교연산자(기본값은 less<자료형>)
     //greater로 하면 오름차순으로 정렬, 기본값으로 하면 내림차순
@@ -135,10 +134,53 @@ void Graph::findShortestWay(Vertex from, Vertex to){       //다익스트라 알고리즘
             }
         }
     }
-    
 }
 //============================================================================
-string Graph::findFairPoint(Vertex terminal1, Vertex terminal2){
+void Graph::printShortestWay(int fromIndex, int toIndex){
+    int minute, second;
+    minute = dist[toIndex]/2;
+    second = (dist[toIndex]%2)*30;
+    int i=fromIndex;
+    while(route[i]!=toIndex){
+        cout<<vertex[i]<<endl;;
+        i=route[i];
+    }
+    cout<<vertex[toIndex]<<endl;
+    cout<<minute<<":"<<second<<endl;   
+}
+//============================================================================
+string Graph::findFairPoint(int terminal1, int terminal2){
+    vector<int> temp;        //terminal1을 기준으로 찾은 최단거리를 저장할 예정
+    temp.resize((int)dist.size());      //temp의 사이즈를 dist의 사이즈만큼
+    findShortestWay(terminal1, terminal2);
+    copy(dist.begin(),dist.end(),temp.begin());
+    findShortestWay(terminal2, terminal1);
+    vector<int> dif;
+    dif.resize((int)dist.size());
+    int minIndex=-1;    //Index는 음수일수 없으니 어찌되었든 반영
+    int minDif=INF;     //두 걸린 시간 차의 최소를 담을 변수
+    vector<int>::iterator itr=dist.begin(); //dist와 temp와 dif의 크기는 같다.
+    for(int i=0; itr!=dist.end(); itr+i){
+        dif[i]=dist[i]-temp[i];
+        if(dif[i]<0) dif[i]=-dif[i];
+        if(minDif>dif[i]){
+            minDif=dif[i];  minIndex=i;
+        }
+    }
+    cout<<vertex[minIndex]<<endl;     //중점 출력
+    
+    int tempMinute,tempSecond;
+    int distMinute,distSecond;
+    tempMinute=temp[minIndex]/2; tempSecond=temp[minIndex]%2;
+    distMinute=dist[minIndex]/2; distSecond=dist[minIndex]%2;
 
+    if(temp[minIndex]>dist[minIndex]){      //크기에 따라서 걸린시간 출력
+        cout<<tempMinute<<":"<<tempSecond<<endl;
+        cout<<distMinute<<":"<<distSecond<<endl;
+    }    
+    else{
+        cout<<distMinute<<":"<<distSecond<<endl;
+        cout<<tempMinute<<":"<<tempSecond<<endl;
+    }
 }    
 //============================================================================
