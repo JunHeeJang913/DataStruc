@@ -2,7 +2,7 @@
 using namespace std;
 //============================================================================
 ostream& operator <<(ostream& os, Vertex& v){
-    os<<v.getStation()<<endl;
+    os<<v.getStation();
     return os;
 }
 //============================================================================
@@ -11,23 +11,21 @@ Vertex::Vertex(int line, string station){
     this->station=station;
 }
 //============================================================================
-int Graph::findIndex(Vertex station){
+int Graph::findIndex(Vertex station){       //다짰다.
         int index=0;
         vector<Vertex>::iterator itr=vertex.begin(); 
-        for(int i = 0; itr!=vertex.end();i++){
-            if(vertex[i]==station){
-                return i;
+        for(; itr!=vertex.end();++itr){
+            if(*itr==station){
+                return itr-vertex.begin();
             }
         }  
 }
 //============================================================================
-bool Graph::isVertexExist(Vertex station)
+bool Graph::isVertexExist(Vertex station)       //다짰다.
 {
     vector<Vertex>::iterator itr = vertex.begin();
-    for (int i = 0; itr != vertex.end(); i++)
-    {
-        if (vertex[i] == station)
-        {
+    for (; itr != vertex.end(); ++itr){
+        if (*itr == station){
             return true;
         }
     }
@@ -53,7 +51,6 @@ Graph::Graph(int numLine, istream& f){
     string stat1,stat2;
     int n = 2*numLine;  //역의 최대 개수는 numline*2;
     int index=0;
-    HeadNodes = new vector<Vertex>[n];
     while(f){       //그래프 만드는 과정
         f>>line1; f>>stat1; f>>line2; f>>stat2;
         Vertex temp1(line1,stat1); Vertex temp2(line2,stat2);
@@ -67,6 +64,7 @@ Graph::Graph(int numLine, istream& f){
        temp2.setWeight(temp1);  temp1.setWeight(temp2); //길이도 설정
        //만약 temp1, temp2가 새 정점이라면 정점 집합에 추가.
        if(isVertexExist(temp1)==false){
+           HeadNodes.resize(index+1);
            temp1.setIndex(index);
            vertex.push_back(temp1);
            index++;
@@ -75,6 +73,7 @@ Graph::Graph(int numLine, istream& f){
            temp1.setIndex(findIndex(temp1));
        }
        if(isVertexExist(temp2)==false){
+           HeadNodes.resize(index+1);
            temp2.setIndex(index);
            vertex.push_back(temp2);
            index++;
@@ -102,9 +101,7 @@ Graph::Graph(int numLine, istream& f){
             HeadNodes[findIndex(temp2)].push_back(temp1);
        }*/
     }
-    for(int i=0;i<index+1;i++){
-        dist[i]=INF;
-    }//일단 무한대로 채운다.    
+    numOfVertex=index;  
     //노선도 완성!
 }
 //============================================================================
@@ -124,9 +121,10 @@ int Graph::choose(const int n){
 }
 //============================================================================
 void Graph::findShortestWay(int fromIndex, int toIndex){       //다익스트라 알고리즘,연결리스트,우선순위 큐를 이용
+    dist.clear(); dist.reserve(vertex.size()); dist.resize(vertex.size(),INF);
+    route.clear(); route.reserve(vertex.size()); route.resize(vertex.size(),-1);
     dist[fromIndex]=0;
     priority_queue<pair<int,int>, vector<pair<int,int> >,greater<pair<int,int> > > pq;
-    queue<Vertex> tempRoute;
     //우선순위 큐는 pair의 경우 first를 기준으로 정렬, <가중치, 인덱스> 쌍이다.
     //우선순위큐<자료형,구현체(대게 vector<자료형>),비교연산자(기본값은 less<자료형>)
     //greater로 하면 오름차순으로 정렬, 기본값으로 하면 내림차순
@@ -138,10 +136,11 @@ void Graph::findShortestWay(int fromIndex, int toIndex){       //다익스트라 알고
         if(dist[current]<distance) continue;
         for(int i=0;i<HeadNodes[current].size();i++){
             int nextDist = distance+HeadNodes[current][i].getWeight();
-            int next = HeadNodes[current][i].getIndex();
-            if(nextDist < dist[next]){  //더 빨라진다면
-                dist[next] = nextDist;
-                pq.push(make_pair(nextDist, next));
+            int nextIndex = HeadNodes[current][i].getIndex();
+            if(nextDist < dist[nextIndex]){  //더 빨라진다면
+                dist[nextIndex] = nextDist;
+                route[nextIndex]=current;
+                pq.push(make_pair(nextDist, nextIndex));
             }
         }
     }
@@ -151,13 +150,23 @@ void Graph::printShortestWay(int fromIndex, int toIndex){
     int minute, second;
     minute = dist[toIndex]/2;
     second = (dist[toIndex]%2)*30;
-    int i=fromIndex;
-    while(route[i]!=toIndex){
-        cout<<vertex[i]<<endl;;
+    int i=toIndex;
+    stack<int> routeStack;      //LIFO이므로 적절하다고 생각. 역순으로 추적할 계획
+    routeStack.push(i);
+    while(route[i]!=-1){
         i=route[i];
+        if(vertex[routeStack.top()].getStation()!=vertex[i].getStation())
+            routeStack.push(i);
+        
     }
-    cout<<vertex[toIndex]<<endl;
-    cout<<minute<<":"<<second<<endl;   
+    while(!routeStack.empty()){
+        i=routeStack.top(); routeStack.pop();
+        cout<<vertex[i]<<endl;
+    }
+    cout<<minute<<":";
+    cout.fill('0');
+    cout.width(2);
+    cout<<second<<endl;   
 }
 //============================================================================
 void Graph::findFairPoint(int terminal1, int terminal2){
@@ -167,11 +176,11 @@ void Graph::findFairPoint(int terminal1, int terminal2){
     copy(dist.begin(),dist.end(),temp.begin());
     findShortestWay(terminal2, terminal1);
     vector<int> dif;
-    dif.resize((int)dist.size());
+    dif.resize(dist.size(),INF);
     int minIndex=-1;    //Index는 음수일수 없으니 어찌되었든 반영
     int minDif=INF;     //두 걸린 시간 차의 최소를 담을 변수
     vector<int>::iterator itr=dist.begin(); //dist와 temp와 dif의 크기는 같다.
-    for(int i=0; itr!=dist.end(); itr+i){
+    for(int i=0; i<numOfVertex ; ++i){
         dif[i]=dist[i]-temp[i];
         if(dif[i]<0) dif[i]=-dif[i];
         if(minDif>dif[i]){
@@ -182,16 +191,28 @@ void Graph::findFairPoint(int terminal1, int terminal2){
     
     int tempMinute,tempSecond;
     int distMinute,distSecond;
-    tempMinute=temp[minIndex]/2; tempSecond=temp[minIndex]%2;
-    distMinute=dist[minIndex]/2; distSecond=dist[minIndex]%2;
+    tempMinute=temp[minIndex]/2; tempSecond=temp[minIndex]%2*30;
+    distMinute=dist[minIndex]/2; distSecond=dist[minIndex]%2*30;
 
     if(temp[minIndex]>dist[minIndex]){      //크기에 따라서 걸린시간 출력
-        cout<<tempMinute<<":"<<tempSecond<<endl;
-        cout<<distMinute<<":"<<distSecond<<endl;
+        cout<<tempMinute<<":";
+        cout.fill('0');
+        cout.width(2);
+        cout<<tempSecond<<endl;
+        cout<<distMinute<<":";
+        cout.fill('0');
+        cout.width(2);
+        cout<<distSecond<<endl;
     }    
     else{
-        cout<<distMinute<<":"<<distSecond<<endl;
-        cout<<tempMinute<<":"<<tempSecond<<endl;
+        cout<<distMinute<<":";
+        cout.fill('0');
+        cout.width(2);
+        cout<<distSecond<<endl;
+        cout<<tempMinute<<":";
+        cout.fill('0');
+        cout.width(2);
+        cout<<tempSecond<<endl;
     }
 }    
 //============================================================================

@@ -43,9 +43,10 @@ public:
 class Graph
 {
 private:
+    int numOfVertex;
     vector<int> dist; //거리 배열
     vector<bool> check;
-    vector<Vertex> *HeadNodes;
+    vector<vector<Vertex> > HeadNodes;
     vector<Vertex> vertex; //모든 정점의 집합
     vector<int> route;
 public:
