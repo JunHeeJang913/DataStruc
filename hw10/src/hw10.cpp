@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    fstream fin(argv[1]);
+    ifstream fin(argv[1]);
     if (!fin)
     {
         cerr << argv[1] << " open failed" << endl;
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     //데이터 입력받아 지하철노선도 만들기
     Graph subwayMap(numLine, fin);      //subwayMap객체 생성
     fin.close();
-    fstream fin2(argv[2]);
+    ifstream fin2(argv[2]);
     if (!fin2)
     {
         cerr << argv[2] << " open failed" << endl;

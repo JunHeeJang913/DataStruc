@@ -13,27 +13,38 @@ Vertex::Vertex(int line, string station){
 //============================================================================
 int Graph::findIndex(Vertex station){
         int index=0;
-        for(Vertex x:vertex){
-            if(x==station){
-                return index;
+        vector<Vertex>::iterator itr=vertex.begin(); 
+        for(int i = 0; itr!=vertex.end();i++){
+            if(vertex[i]==station){
+                return i;
             }
-            index++;
-        }
+        }  
 }
 //============================================================================
-bool Graph::isVertexExist(Vertex station){
-    for(Vertex x:vertex){
+bool Graph::isVertexExist(Vertex station)
+{
+    vector<Vertex>::iterator itr = vertex.begin();
+    for (int i = 0; itr != vertex.end(); i++)
+    {
+        if (vertex[i] == station)
+        {
+            return true;
+        }
+    }
+    return false;
+    /*for(Vertex x:vertex){
         if(x==station){     //만약 존재한다면 참을 반환
             return true;
         }
     }
     return false;   //다 돌아봤는데 없으면 거짓을 반환
+*/
 }
 //============================================================================
 void Vertex::setWeight(Vertex& v){
     if(this->line!=v.line&&this->station==v.station)
         this->weight=1;
-    else if(this->line==v.line&&this->station==v.station)
+    else if(this->line==v.line&&this->station!=v.station)
         this->weight=2;
 }
 //============================================================================
@@ -57,7 +68,7 @@ Graph::Graph(int numLine, istream& f){
        //만약 temp1, temp2가 새 정점이라면 정점 집합에 추가.
        if(isVertexExist(temp1)==false){
            temp1.setIndex(index);
-           vertex[index]=temp1;
+           vertex.push_back(temp1);
            index++;
        }
        else{    //같은 역(호선, 역 이름)이 있다면, 같은 정점으로 만들기 위해 인덱스까지 가져온다. 
@@ -65,7 +76,7 @@ Graph::Graph(int numLine, istream& f){
        }
        if(isVertexExist(temp2)==false){
            temp2.setIndex(index);
-           vertex[index]=temp1;
+           vertex.push_back(temp2);
            index++;
        }
        else{    //같은 역(호선, 역 이름)이 있다면, 같은 정점으로 만들기 위해 인덱스까지 가져온다.
@@ -149,7 +160,7 @@ void Graph::printShortestWay(int fromIndex, int toIndex){
     cout<<minute<<":"<<second<<endl;   
 }
 //============================================================================
-string Graph::findFairPoint(int terminal1, int terminal2){
+void Graph::findFairPoint(int terminal1, int terminal2){
     vector<int> temp;        //terminal1을 기준으로 찾은 최단거리를 저장할 예정
     temp.resize((int)dist.size());      //temp의 사이즈를 dist의 사이즈만큼
     findShortestWay(terminal1, terminal2);

@@ -9,6 +9,7 @@
 #include <math.h>
 #include <algorithm>
 #include <map>
+using namespace std;
 
 class Vertex
 {
@@ -20,7 +21,7 @@ private:
 public:
     Vertex()
     {
-        line = NULL;
+        line = 0;
         station = "\0";
     };
     Vertex(int line, string station);
@@ -51,7 +52,7 @@ public:
     int choose(const int n);
     Graph(int numLine, istream &f);
     void findShortestWay(int fromIndex, int toIndex);             //A부터 B로가는 최단거리
-    string findFairPoint(int terminal1, int terminal2); //A와 B 중간의 지점
+    void findFairPoint(int terminal1, int terminal2); //A와 B 중간의 지점
     int findIndex(Vertex station);         //graph에서 사용할 인덱스 찾아주는 함수
     bool isVertexExist(Vertex station);    //역이 이미 입력된적이 있는지 찾아주는 함수
     void printShortestWay(int fromIndex, int toIndex);
