@@ -1,0 +1,13 @@
+다익스트라 알고리즘:	https://blog.naver.com/ndb796/221234424646
+			https://www.crocus.co.kr/546
+cout출력포맷:	https://repilria.tistory.com/243
+vector container:	https://blockdmask.tistory.com/70
+		https://modoocode.com/223
+		https://terrorjang.tistory.com/85	//vector복사
+		https://torbjorn.tistory.com/265	//반복자를 이용해 vector에서 인덱스 찾기
+우선순위 큐:	https://blockdmask.tistory.com/107
+		https://koosaga.com/9
+교재
+the C++ programming language
+명품 C++ 프로그래밍
+Hello Coding 그림으로 개념을 이해하는 알고리즘

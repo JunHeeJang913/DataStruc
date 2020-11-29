@@ -17,7 +17,7 @@
         
                 //추가
                 //2. file input
-                "\"stations1.txt\" \"input1.txt\"",
+                "\"stations2.txt\" \"input2.txt\"",
         
                 //추가
                 //3. file output
@@ -27,7 +27,7 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "MIMode": "gdb",
             "setupCommands": [
                 {

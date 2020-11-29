@@ -1,14 +1,12 @@
 #ifndef SUBWAY_H
 #define SUBWAY_H
-#define INF 1000000000
+#define INF 2147483647
 #include <iostream>
 #include <stack>
 #include <queue>
 #include <vector>
 #include <string>
-#include <math.h>
 #include <algorithm>
-#include <map>
 using namespace std;
 
 class Vertex
@@ -16,7 +14,7 @@ class Vertex
 private:
     int line;       //호선
     string station; //역이름
-    int weight;   //가중치
+    int dist;   //가중치
     int index;
 public:
     Vertex()
@@ -34,10 +32,10 @@ public:
         else
             return false;
     };
-    void setWeight(Vertex &v);
+    void setDist(Vertex &v);
     void setIndex(int index){ this->index = index; };
     int getIndex(){ return this->index; };
-    int getWeight(){ return this->weight; };
+    int getDist(){ return this->dist; };
 };
 
 class Graph
@@ -45,12 +43,10 @@ class Graph
 private:
     int numOfVertex;
     vector<int> dist; //거리 배열
-    vector<bool> check;
     vector<vector<Vertex> > HeadNodes;
     vector<Vertex> vertex; //모든 정점의 집합
     vector<int> route;
 public:
-    int choose(const int n);
     Graph(int numLine, istream &f);
     void findShortestWay(int fromIndex, int toIndex);             //A부터 B로가는 최단거리
     void findFairPoint(int terminal1, int terminal2); //A와 B 중간의 지점

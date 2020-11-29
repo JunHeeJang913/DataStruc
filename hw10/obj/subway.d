@@ -145,36 +145,8 @@ obj/subway.o: src/subway.cpp src/subway.h \
  D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
  D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h \
  D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_queue.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/math.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cmath \
- D:/MinGW/mingw32/i686-w64-mingw32/include/math.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/specfun.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/gamma.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/special_function_util.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/bessel_function.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/special_function_util.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/beta_function.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/ell_integral.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/exp_integral.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/hypergeometric.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/legendre_function.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/modified_bessel_func.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/poly_hermite.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/poly_laguerre.tcc \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tr1/riemann_zeta.tcc \
  D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/algorithm \
  D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
  D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
  D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/map \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_tree.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/node_handle.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/optional \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/enable_special_members.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_map.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tuple \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/array \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/invoke.h \
- D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_multimap.h
+ D:/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h
