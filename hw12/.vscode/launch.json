@@ -17,7 +17,7 @@
         
                 //추가
                 //2. file input
-                "input.txt",
+                "\"6\" \"t50.txt\" \"t100.txt\" \"t200.txt\" \"t300.txt\" \"t400.txt\" \"t500.txt\"",
         
                 //추가
                 //3. file output
