@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
             heap[j]=ins[j];
         }
         fin.close();
-
         // i번째 인자의 파일을 읽습니다.
         // 각 정렬 알고리즘에 필요한 자료구조를 생성하고 데이터를 담습니다.
         // 여기부터 정렬 시간 측정을 시작합니다.
@@ -55,7 +54,6 @@ int main(int argc, char *argv[])
         //삽입정렬 수행 ...
         InsertionSort(ins,N);
         gettimeofday(&end_t, NULL); 
-        printArray(ins, N);
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[0] = diff_t;
 
@@ -63,7 +61,6 @@ int main(int argc, char *argv[])
         //퀵정렬 수행 ...
         QuickSort(quick, 1, N);
         gettimeofday(&end_t, NULL); 
-        printArray(quick, N);
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[1] = diff_t;
 
@@ -71,16 +68,18 @@ int main(int argc, char *argv[])
         //합병정렬 수행 ...
         MergeSort(merge, N);
         gettimeofday(&end_t, NULL); 
-        printArray(merge, N);
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[2] = diff_t;
 
+        int * link = new int [N+1];
+        for(int i=0;i<N+1;i++){
+            link[i]=0;
+        }
         gettimeofday(&start_t, NULL); 
         //순환합병정렬 수행 ...
-        int * link = new int [N+1];
-        rMergeSort(recmg, link,1,N);
+        rMergeSort(recmg,link, 1,N);
         gettimeofday(&end_t, NULL); 
-        printArray(recmg, N);
+
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[3] = diff_t;
 
@@ -94,7 +93,6 @@ int main(int argc, char *argv[])
         //힙정렬 수행 ...
         HeapSort(heap, N);
         gettimeofday(&end_t, NULL); 
-        printArray(heap,N);
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[5] = diff_t;
         
