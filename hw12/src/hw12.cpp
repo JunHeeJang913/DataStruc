@@ -85,6 +85,7 @@ int main(int argc, char *argv[])
 
         gettimeofday(&start_t, NULL); 
         //자연합병정렬 수행 ...
+        NaturalMergeSort(natmg,N);
         gettimeofday(&end_t, NULL); 
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[4] = diff_t;

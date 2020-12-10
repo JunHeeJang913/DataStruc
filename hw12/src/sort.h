@@ -50,6 +50,7 @@ void InsertionSort(T*a, const int n){
         Insert(temp,a,j-1);
     }
 }
+
 //퀵정렬
 template <class T>
 void QuickSort(T *a, const int left, const int right){
@@ -69,6 +70,7 @@ void QuickSort(T *a, const int left, const int right){
         QuickSort(a,j+1, right);    //피벗기준 우측 배열 정렬
     }
 }
+
 //합병정렬-반복합병정렬(Iterative Merge Sort)
 template<class T>
 void Merge(T*initList, T*mergedList, const int l, const int m, const int n){
@@ -89,6 +91,7 @@ void Merge(T*initList, T*mergedList, const int l, const int m, const int n){
     copy(initList+i1,initList+m+1, mergedList+iResult);
     copy(initList+i2,initList+n+1, mergedList+iResult);
 }
+
 template <class T>
 void MergePass(T *initList,T*resultList, const int n , const int s){
     //합병정렬은 여러개의 합병단계(pass)로 구분된다.
@@ -101,6 +104,7 @@ void MergePass(T *initList,T*resultList, const int n , const int s){
     else
         copy(initList+i,initList+n+1,resultList+i);
 }
+
 template<class T>
 void MergeSort(T*a, const int n){
     T * tempList = new T[n+1];
@@ -141,11 +145,32 @@ int rMergeSort(T*a, T* link, const int left, const int right){
                      rMergeSort(a, link, left, mid),
                      rMergeSort(a, link, mid+1,right));
 }
-
-
-
 //합병정렬-자연
-
+template <class T>
+int NaturalDevide(T*a, const int start, const int n){
+    //끝나는 지점 반환
+    for(int i=start; i<n;++i){
+        if(a[i]>a[i+1]) return i;
+    }
+    if(start==1)
+        return 0;
+    return n;
+}
+template <class T>
+void NaturalMergeSort(T*a, const int n){
+    T * tempList = new T[n+1];
+    int end;    
+    int pivot=n;
+    while(pivot!=0){    //pivot==0<==>1부터 n까지 주르륵 정렬이 되어있음.
+        for(int i=1;i<=n;i=end+1){
+            pivot=NaturalDevide(a, i, n);
+            if(pivot==0) break;
+            end=NaturalDevide(a, pivot+1, n);
+            Merge(a,tempList, i, pivot, end); 
+        }
+        copy(tempList,tempList+n+1, a);
+    }
+}
 
 
 //힙정렬
