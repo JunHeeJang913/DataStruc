@@ -14,6 +14,8 @@ int main(int argc, char *argv[])
     int i;             // iterator
     double result[6]; // result 배열에 각 알고리즘 별로 실행시간을 저장하게 됩니다.
     double diff_t;
+    clock_t start;
+    clock_t end;
     // result[0]: insertion sort
     // result[1]: quick sort
     // result[2]: iterative merge sort
@@ -49,7 +51,6 @@ int main(int argc, char *argv[])
         // i번째 인자의 파일을 읽습니다.
         // 각 정렬 알고리즘에 필요한 자료구조를 생성하고 데이터를 담습니다.
         // 여기부터 정렬 시간 측정을 시작합니다.
-        
         gettimeofday(&start_t, NULL); 
         //삽입정렬 수행 ...
         InsertionSort(ins,N);
@@ -97,8 +98,49 @@ int main(int argc, char *argv[])
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[5] = diff_t;
         
+        /*
+        start = clock();
+        //삽입정렬수행
+        InsertionSort(ins,N);
+        end = clock();        
+        result[0] = end-start;
+
+        start = clock();
+        //퀵정렬수행 
+        QuickSort(quick, 1, N);
+        end = clock();        
+        result[1] = end-start;
+
+        start = clock();
+        //합병정렬수행 
+        MergeSort(merge, N);
+        end = clock();        
+        result[2] = end-start;
+
+        int * link = new int [N+1];
+        for(int i=0;i<N+1;i++){
+            link[i]=0;
+        }
+        start = clock();
+        //순환합병정렬수행 
+        end = clock();
+        rMergeSort(recmg,link, 1,N);        
+        result[3] = end-start;
+
+        start = clock();
+        //자연합영정렬수행 
+        NaturalMergeSort(natmg,N);
+        end = clock();        
+        result[4] = end-start;
+
+        start = clock();
+        //힙정렬수행 
+        HeapSort(heap, N);
+        end = clock();        
+        result[5] = end-start;
+        */
+
         // 결과를 출력합니다. (이 부분은 수정하지 않습니다)
-        
         cout.precision(5);
         cout << fixed;
         for (int j = 0; j < 6; j++)
@@ -114,5 +156,6 @@ int main(int argc, char *argv[])
         delete [] recmg;
         delete [] natmg;
         delete [] heap;
+        delete [] link;
     }
 }
