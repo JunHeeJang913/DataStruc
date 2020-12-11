@@ -8,11 +8,16 @@ class Node{
     friend class AVLtree;
 private:
     int value;
-    Node * leftChild;
-    Node * RightChild;
+    Node * leftChild=nullptr;
+    Node * rightChild=nullptr;
+    int balFac=0;
     int leftheight=0;
     int rightheight=0;
+    int height=0;
+    int calHeight(){ return calHeight(this);};
 public:
+    int calHeight(Node * n);
+    int calBF();
     Node();
     Node(int a){ value = a; };
     ostream &operator <<(ostream& os){ os<<value; return os; };
@@ -20,14 +25,14 @@ public:
 
 class AVLtree{
 private:
-    Node * root;
+    Node * root=nullptr;
 public:
-    friend class Node;
+    AVLtree();
     void Search(int a,Node * n);
-    void insert(int a,Node * n);
+    void insert(int a,Node * &n);
     void del(int a, Node * n);
     void Showresult(Node * n);
-    void rotate(Node * n);
+    void rotate(int key, Node * n);
 };
 
 
