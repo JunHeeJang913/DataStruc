@@ -6,7 +6,7 @@ int main()
     Node * root;
     int a, choice, findele, delele;
     AVLtree bst;
-    bool flag = false;
+    bool flag = true;
     root = NULL;
     bst.insert(19, root);   bst.insert(10, root);   bst.insert(46, root);
     bst.insert(4, root);    bst.insert(14, root);   bst.insert(37, root);

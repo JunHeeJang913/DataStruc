@@ -1,5 +1,7 @@
 #ifndef AVL_H
 #define AVL_H
+#include <queue>
+#include <stack>
 #include <iostream>
 using namespace std;
 class AVLtree;
@@ -18,7 +20,7 @@ private:
 public:
     int calHeight(Node * n);
     int calBF();
-    Node();
+    Node(){};
     Node(int a){ value = a; };
     ostream &operator <<(ostream& os){ os<<value; return os; };
 };
@@ -27,12 +29,13 @@ class AVLtree{
 private:
     Node * root=nullptr;
 public:
-    AVLtree();
+    AVLtree(){};
     void Search(int a,Node * n);
     void insert(int a,Node * &n);
-    void del(int a, Node * n);
+    void del(int a, Node * &n);
     void Showresult(Node * n);
-    void rotate(int key, Node * n);
+    Node* rotate(int key, Node * n);
+    void rotateAll(Node *&n);
 };
 
 
