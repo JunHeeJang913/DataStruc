@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
         gettimeofday(&end_t, NULL); 
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[0] = diff_t;
+        //printArray(ins,N);
 
         gettimeofday(&start_t, NULL); 
         //퀵정렬 수행 ...
@@ -63,6 +64,7 @@ int main(int argc, char *argv[])
         gettimeofday(&end_t, NULL); 
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[1] = diff_t;
+        //printArray(quick,N);
 
         gettimeofday(&start_t, NULL); 
         //합병정렬 수행 ...
@@ -70,6 +72,7 @@ int main(int argc, char *argv[])
         gettimeofday(&end_t, NULL); 
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[2] = diff_t;
+        //printArray(merge,N);
 
         int * link = new int [N+1];
         for(int i=0;i<N+1;i++){
@@ -81,6 +84,7 @@ int main(int argc, char *argv[])
         gettimeofday(&end_t, NULL); 
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[3] = diff_t;
+        //printArray(recmg, link,N);
 
         gettimeofday(&start_t, NULL); 
         //자연합병정렬 수행 ...
@@ -88,6 +92,7 @@ int main(int argc, char *argv[])
         gettimeofday(&end_t, NULL); 
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[4] = diff_t;
+        //printArray(natmg,N);
 
         gettimeofday(&start_t, NULL); 
         //힙정렬 수행 ...
@@ -95,6 +100,7 @@ int main(int argc, char *argv[])
         gettimeofday(&end_t, NULL); 
         diff_t = (double)(end_t.tv_sec-start_t.tv_sec)+((double)(end_t.tv_usec-start_t.tv_usec)/1000000); 
         result[5] = diff_t;
+        //printArray(heap,N);
     
         // 결과를 출력합니다. (이 부분은 수정하지 않습니다)
         

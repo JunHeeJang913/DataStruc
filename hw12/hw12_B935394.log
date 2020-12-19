@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.3)  14 DEC 2020 00:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.3)  16 DEC 2020 20:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**hw11_B935394.tex
-(./hw11_B935394.tex
+**hw12_B935394.tex
+(./hw12_B935394.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-08-07>
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -297,13 +297,33 @@ File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
 \Gin@req@height=\dimen153
 \Gin@req@width=\dimen154
 )
+(d:/TexLive/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip52
+\subfigcapskip=\skip53
+\subfigcaptopadj=\dimen155
+\subfigbottomskip=\skip54
+\subfigcapmargin=\dimen156
+\subfiglabelskip=\skip55
+\c@subfigure=\count193
+\c@lofdepth=\count194
+\c@subtable=\count195
+\c@lotdepth=\count196
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(d:/TexLive/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip56
+\subfig@bottom=\skip57
+)
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count193
+\c@float@type=\count197
 \float@exts=\toks25
 \float@box=\box47
 \@float@everytoks=\toks26
@@ -313,7 +333,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks27
-\c@algorithm=\count194
+\c@algorithm=\count198
 )
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -322,83 +342,83 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count195
-\c@ALG@rem=\count196
-\c@ALG@nested=\count197
-\ALG@tlm=\skip52
-\ALG@thistlm=\skip53
-\c@ALG@Lnr=\count198
-\c@ALG@blocknr=\count199
-\c@ALG@storecount=\count266
-\c@ALG@tmpcounter=\count267
-\ALG@tmplength=\skip54
+\c@ALG@line=\count199
+\c@ALG@rem=\count266
+\c@ALG@nested=\count267
+\ALG@tlm=\skip58
+\ALG@thistlm=\skip59
+\c@ALG@Lnr=\count268
+\c@ALG@blocknr=\count269
+\c@ALG@storecount=\count270
+\c@ALG@tmpcounter=\count271
+\ALG@tmplength=\skip60
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (d:/TexLive/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count268
+\FV@CodeLineNo=\count272
 \FV@InFile=\read2
 \FV@TabBox=\box49
-\c@FancyVerbLine=\count269
-\FV@StepNumber=\count270
+\c@FancyVerbLine=\count273
+\FV@StepNumber=\count274
 \FV@OutFile=\write3
 )
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count271
+\l__kernel_color_stack_int=\count275
 \l__pdf_internal_box=\box50
 )
-(./hw11_B935394.aux)
-\openout1 = `hw11_B935394.aux'.
+(./hw12_B935394.aux)
+\openout1 = `hw12_B935394.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 11.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 12.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-11.
+12.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 12.
 LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-11.
+12.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 12.
 LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-11.
+12.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 12.
 LaTeX Font Info:    Trying to load font information for U+txexa on input line 1
-1.
+2.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 12.
 LaTeX Font Info:    Trying to load font information for LUC+nanummj on input li
-ne 11.
+ne 12.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
-1.
+2.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
@@ -439,16 +459,16 @@ File: ot1txr.fd 2000/12/15 v3.1
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count272
-\scratchdimen=\dimen155
+\scratchcounter=\count276
+\scratchdimen=\dimen157
 \scratchbox=\box51
-\nofMPsegments=\count273
-\nofMParguments=\count274
+\nofMPsegments=\count277
+\nofMParguments=\count278
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count275
-\MPscratchDim=\dimen156
-\MPnumerator=\count276
-\makeMPintoPDFobject=\count277
+\MPscratchCnt=\count279
+\MPscratchDim=\dimen158
+\MPnumerator=\count280
+\makeMPintoPDFobject=\count281
 \everyMPtoPDFconversion=\toks29
 ) (d:/TexLive/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -460,25 +480,25 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 1
-4.
+5.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 1
-4.
+5.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 1
-4.
+5.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 1
-4.
+5.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
@@ -486,126 +506,215 @@ File: utxsyc.fd 2000/12/15 v3.1
 
 {d:/TexLive/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 16.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <14.4> not available
 (Font)              Font shape `LUC/nanummj/bx/n' tried instead on input line 1
-6.
-<heapsort.jpg, id=18, 1674.255pt x 2165.08875pt>
-File: heapsort.jpg Graphic file (type jpg)
-<use heapsort.jpg>
-Package pdftex.def Info: heapsort.jpg  used on input line 22.
-(pdftex.def)             Requested size: 293.63544pt x 379.68909pt.
-LaTeX Font Info:    Trying to load font information for OMS+txr on input line 2
-9.
-
-(d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/omstxr.fd
-File: omstxr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 29.
- [2 <./heapsort.jpg>]
+7.
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 19.
 LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 
-40.
- (d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+20.
+
+(d:/TexLive/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for LUC+nanumgt on input li
-ne 43.
+ne 21.
 
 (d:/TexLive/texlive/2020/texmf-dist/tex/latex/nanumtype1/lucnanumgt.fd
 File: lucnanumgt.fd 2013/02/12 v0.1 Nanum Gothic font definitions
 )
-[3] (./hw11_B935394.aux)
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <10.95> not available
+(Font)              Font shape `LUC/nanummj/bx/n' tried instead on input line 4
+4.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+[2] [3] [4] [5] [6]
+<random_result.png, id=113, 332.74312pt x 181.67876pt>
+File: random_result.png Graphic file (type png)
+<use random_result.png>
+Package pdftex.def Info: random_result.png  used on input line 215.
+(pdftex.def)             Requested size: 244.69371pt x 133.60573pt.
+<random_graph.png, id=114, 448.67625pt x 269.50688pt>
+File: random_graph.png Graphic file (type png)
+<use random_graph.png>
+Package pdftex.def Info: random_graph.png  used on input line 216.
+(pdftex.def)             Requested size: 244.69371pt x 146.97908pt.
 
- ) 
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 215--217
+[][] [] 
+ []
+
+<psorted_result.png, id=115, 333.245pt x 185.19188pt>
+File: psorted_result.png Graphic file (type png)
+<use psorted_result.png>
+Package pdftex.def Info: psorted_result.png  used on input line 224.
+(pdftex.def)             Requested size: 244.69371pt x 135.98581pt.
+<psorted_graph.png, id=116, 448.67625pt x 269.50688pt>
+File: psorted_graph.png Graphic file (type png)
+<use psorted_graph.png>
+Package pdftex.def Info: psorted_graph.png  used on input line 225.
+(pdftex.def)             Requested size: 244.69371pt x 146.97908pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 224--226
+[][] [] 
+ []
+
+[7 <./random_result.png> <./random_graph.png> <./psorted_result.png> <./psorted
+_graph.png>]
+<Sorted_result.png, id=126, 329.73187pt x 180.675pt>
+File: Sorted_result.png Graphic file (type png)
+<use Sorted_result.png>
+Package pdftex.def Info: Sorted_result.png  used on input line 234.
+(pdftex.def)             Requested size: 244.69371pt x 134.08336pt.
+<Sorted_graph.png, id=127, 448.67625pt x 269.50688pt>
+File: Sorted_graph.png Graphic file (type png)
+<use Sorted_graph.png>
+Package pdftex.def Info: Sorted_graph.png  used on input line 235.
+(pdftex.def)             Requested size: 244.69371pt x 146.97908pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 234--236
+[][] [] 
+ []
+
+<decreasing_result.png, id=128, 330.23375pt x 184.69pt>
+File: decreasing_result.png Graphic file (type png)
+<use decreasing_result.png>
+Package pdftex.def Info: decreasing_result.png  used on input line 244.
+(pdftex.def)             Requested size: 244.69371pt x 136.85443pt.
+<decreasing_graph.png, id=129, 448.67625pt x 269.50688pt>
+File: decreasing_graph.png Graphic file (type png)
+<use decreasing_graph.png>
+Package pdftex.def Info: decreasing_graph.png  used on input line 245.
+(pdftex.def)             Requested size: 244.69371pt x 146.97908pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 244--246
+[][] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+
+ []
+
+[8 <./sorted_result.png> <./sorted_graph.png> <./decreasing_result.png> <./decr
+easing_graph.png>] [9] (./hw12_B935394.aux) ) 
 Here is how much of TeX's memory you used:
- 5088 strings out of 480893
- 69937 string characters out of 5908061
- 311551 words of memory out of 5000000
- 20532 multiletter control sequences out of 15000+600000
- 579854 words of font info for 162 fonts, out of 8000000 for 9000
+ 5355 strings out of 480893
+ 74170 string characters out of 5908061
+ 313499 words of memory out of 5000000
+ 20761 multiletter control sequences out of 15000+600000
+ 596497 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,33p,566b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
-{d:/TexLive/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/TexLive/t
-exlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmac.pfb><d:/TexLive
-/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmad.pfb><d:/TexLi
-ve/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmae.pfb><d:/Tex
-Live/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb1.pfb><d:/T
-exLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb2.pfb><d:
-/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb3.pfb><
-d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb4.pfb
-><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb8.p
-fb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmb9
+ 36i,7n,33p,1725b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
+{d:/TexLive/texlive/2020/texmf-dis
+t/fonts/enc/dvips/base/8r.enc}<d:/TexLive/texlive/2020/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanumgtmac.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1
+/public/nanumtype1/nanumgtmad.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/typ
+e1/public/nanumtype1/nanumgtmae.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanumgtmb0.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts
+/type1/public/nanumtype1/nanumgtmb2.pfb><d:/TexLive/texlive/2020/texmf-dist/fon
+ts/type1/public/nanumtype1/nanumgtmb3.pfb><d:/TexLive/texlive/2020/texmf-dist/f
+onts/type1/public/nanumtype1/nanumgtmb4.pfb><d:/TexLive/texlive/2020/texmf-dist
+/fonts/type1/public/nanumtype1/nanumgtmb7.pfb><d:/TexLive/texlive/2020/texmf-di
+st/fonts/type1/public/nanumtype1/nanumgtmb8.pfb><d:/TexLive/texlive/2020/texmf-
+dist/fonts/type1/public/nanumtype1/nanumgtmb9.pfb><d:/TexLive/texlive/2020/texm
+f-dist/fonts/type1/public/nanumtype1/nanumgtmba.pfb><d:/TexLive/texlive/2020/te
+xmf-dist/fonts/type1/public/nanumtype1/nanumgtmbc.pfb><d:/TexLive/texlive/2020/
+texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbd.pfb><d:/TexLive/texlive/202
+0/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmbe.pfb><d:/TexLive/texlive/2
+020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc0.pfb><d:/TexLive/texlive
+/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc1.pfb><d:/TexLive/texli
+ve/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc2.pfb><d:/TexLive/tex
+live/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc5.pfb><d:/TexLive/t
+exlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc6.pfb><d:/TexLive
+/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc7.pfb><d:/TexLi
+ve/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc8.pfb><d:/Tex
+Live/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmc9.pfb><d:/T
+exLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmca.pfb><d:
+/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcc.pfb><
+d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcd.pfb
+><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmce.p
+fb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtmcf
 .pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumgtm
-ba.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumg
-tmbc.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanu
-mgtmbd.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/na
-numgtmc1.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/
-nanumgtmc2.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype
-1/nanumgtmc5.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumty
-pe1/nanumgtmc7.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanum
-type1/nanumgtmc8.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nan
-umtype1/nanumgtmc9.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/n
-anumtype1/nanumgtmcc.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public
-/nanumtype1/nanumgtmcd.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/publ
-ic/nanumtype1/nanumgtmce.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/pu
-blic/nanumtype1/nanumgtmd5.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/
-public/nanumtype1/nanumgtmd6.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type
-1/public/nanumtype1/nanumgtmd7.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/ty
-pe1/public/nanumtype1/nanummjbad.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/
-type1/public/nanumtype1/nanummjbc7.pfb><d:/TexLive/texlive/2020/texmf-dist/font
-s/type1/public/nanumtype1/nanummjbd6.pfb><d:/TexLive/texlive/2020/texmf-dist/fo
-nts/type1/public/nanumtype1/nanummjmac.pfb><d:/TexLive/texlive/2020/texmf-dist/
-fonts/type1/public/nanumtype1/nanummjmad.pfb><d:/TexLive/texlive/2020/texmf-dis
-t/fonts/type1/public/nanumtype1/nanummjmae.pfb><d:/TexLive/texlive/2020/texmf-d
-ist/fonts/type1/public/nanumtype1/nanummjmaf.pfb><d:/TexLive/texlive/2020/texmf
--dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb><d:/TexLive/texlive/2020/tex
-mf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb><d:/TexLive/texlive/2020/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb><d:/TexLive/texlive/2020
-/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb><d:/TexLive/texlive/20
-20/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb><d:/TexLive/texlive/
-2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb><d:/TexLive/texliv
-e/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb><d:/TexLive/texl
-ive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb><d:/TexLive/te
-xlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb><d:/TexLive/
-texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb><d:/TexLiv
-e/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb><d:/TexL
-ive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb><d:/Te
-xLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb><d:/
-TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb><d
-:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb>
-<d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pf
-b><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.
-pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc
-5.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummj
-mc6.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanum
-mjmc7.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nan
-ummjmc8.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/n
-anummjmc9.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1
-/nanummjmca.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtyp
-e1/nanummjmcc.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumt
-ype1/nanummjmcd.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanu
-mtype1/nanummjmce.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/na
-numtype1/nanummjmcf.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/
-nanumtype1/nanummjmd0.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjmd1.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/pub
-lic/nanumtype1/nanummjmd2.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/p
-ublic/nanumtype1/nanummjmd3.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1
-/public/nanumtype1/nanummjmd4.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/typ
-e1/public/nanumtype1/nanummjmd5.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/t
-ype1/public/nanumtype1/nanummjmd6.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmd7.pfb><d:/TexLive/texlive/2020/texmf-dist/fon
-ts/type1/public/txfonts/rtxmi.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/typ
-e1/public/txfonts/rtxr.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/publ
-ic/txfonts/txsy.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/txfo
-nts/txtt.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.p
-fb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on hw11_B935394.pdf (3 pages, 3013224 bytes).
+d0.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanumg
+tmd1.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mgtmd2.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/na
+numgtmd5.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/
+nanumgtmd6.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjbac.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumty
+pe1/nanummjbad.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanum
+type1/nanummjbb3.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nan
+umtype1/nanummjbb7.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/n
+anumtype1/nanummjbb8.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public
+/nanumtype1/nanummjbb9.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/publ
+ic/nanumtype1/nanummjbba.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/pu
+blic/nanumtype1/nanummjbbc.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/
+public/nanumtype1/nanummjbc0.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type
+1/public/nanumtype1/nanummjbc1.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/ty
+pe1/public/nanumtype1/nanummjbc2.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/
+type1/public/nanumtype1/nanummjbc5.pfb><d:/TexLive/texlive/2020/texmf-dist/font
+s/type1/public/nanumtype1/nanummjbc7.pfb><d:/TexLive/texlive/2020/texmf-dist/fo
+nts/type1/public/nanumtype1/nanummjbc8.pfb><d:/TexLive/texlive/2020/texmf-dist/
+fonts/type1/public/nanumtype1/nanummjbc9.pfb><d:/TexLive/texlive/2020/texmf-dis
+t/fonts/type1/public/nanumtype1/nanummjbcc.pfb><d:/TexLive/texlive/2020/texmf-d
+ist/fonts/type1/public/nanumtype1/nanummjbce.pfb><d:/TexLive/texlive/2020/texmf
+-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb><d:/TexLive/texlive/2020/tex
+mf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb><d:/TexLive/texlive/2020/t
+exmf-dist/fonts/type1/public/nanumtype1/nanummjbd6.pfb><d:/TexLive/texlive/2020
+/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd7.pfb><d:/TexLive/texlive/20
+20/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb><d:/TexLive/texlive/
+2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb><d:/TexLive/texliv
+e/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb><d:/TexLive/texl
+ive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb><d:/TexLive/te
+xlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb><d:/TexLive/
+texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb><d:/TexLiv
+e/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb><d:/TexL
+ive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb><d:/Te
+xLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb><d:/
+TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb><d
+:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb>
+<d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pf
+b><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.
+pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb
+9.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+mba.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nanum
+mjmbb.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/nan
+ummjmbc.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjmbd.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtype1
+/nanummjmbe.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumtyp
+e1/nanummjmc0.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmc1.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/nanu
+mtype1/nanummjmc2.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/na
+numtype1/nanummjmc4.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmc5.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/publi
+c/nanumtype1/nanummjmc6.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/pub
+lic/nanumtype1/nanummjmc7.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmc8.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1
+/public/nanumtype1/nanummjmc9.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/typ
+e1/public/nanumtype1/nanummjmca.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmcc.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts
+/type1/public/nanumtype1/nanummjmcd.pfb><d:/TexLive/texlive/2020/texmf-dist/fon
+ts/type1/public/nanumtype1/nanummjmce.pfb><d:/TexLive/texlive/2020/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmcf.pfb><d:/TexLive/texlive/2020/texmf-dist
+/fonts/type1/public/nanumtype1/nanummjmd0.pfb><d:/TexLive/texlive/2020/texmf-di
+st/fonts/type1/public/nanumtype1/nanummjmd1.pfb><d:/TexLive/texlive/2020/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb><d:/TexLive/texlive/2020/texm
+f-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb><d:/TexLive/texlive/2020/te
+xmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb><d:/TexLive/texlive/2020/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb><d:/TexLive/texlive/202
+0/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb><d:/TexLive/texlive/2
+020/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb><d:/TexLive/texlive
+/2020/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><d:/TexLive/texlive/2020/t
+exmf-dist/fonts/type1/public/txfonts/txtt.pfb><d:/TexLive/texlive/2020/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb><d:/TexLive/texlive/2020/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on hw12_B935394.pdf (9 pages, 3478252 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
+ 442 PDF objects out of 1000 (max. 8388607)
+ 320 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

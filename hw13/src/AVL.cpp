@@ -89,7 +89,7 @@ void AVLtree::del(int a, Node * &n){
                 root=curNode;
                 delete temp;
             }
-            n=this->root;
+        
         }
         else{   //root³ëµå ¾Æ´Ò¶§
             if(curNode->rightChild==nullptr&&curNode->leftChild==nullptr){
@@ -152,6 +152,8 @@ void AVLtree::del(int a, Node * &n){
             s.pop();
         }*/
         rotateAll(root);
+        if(parent==nullptr)
+            n=this->root;
     }
     else if(a>curNode->value){
         check=0;

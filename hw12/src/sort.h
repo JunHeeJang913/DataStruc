@@ -63,8 +63,8 @@ void QuickSort(T *a, const int left, const int right){
             do i++; while(a[i]<pivot);
             do j--; while(a[j]>pivot);
             if(i<j) swap(a[i],a[j]);
-        }while(i<j);//피벗 선택(i==j, i>j)과, 정렬할 래코드 재정돈.
-        swap(a[left],a[j]);//피벗이 중간점에
+        }while(i<j);
+        swap(a[left],a[j]);
 
         QuickSort(a,left,j-1);  //피벗기준 좌측 배열 정렬
         QuickSort(a,j+1, right);    //피벗기준 우측 배열 정렬
@@ -95,7 +95,7 @@ void Merge(T*initList, T*mergedList, const int l, const int m, const int n){
 template <class T>
 void MergePass(T *initList,T*resultList, const int n , const int s){
     //합병정렬은 여러개의 합병단계(pass)로 구분된다.
-    //initList가 s개 씩 두개로 쪼개진 배열이다. resultList는 2*s 단위로 정렬됨.
+    //initList가 s개 씩 쪼개진 배열이다. resultList는 2*s 단위로 정렬됨.
     int i;
     for(i=1; i<=n-2*s+1;i+=2*s)
         Merge(initList, resultList, i,i+s-1, i+2*s-1);
